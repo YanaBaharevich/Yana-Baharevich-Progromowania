@@ -41,7 +41,7 @@ console.log(z);
 document.getElementById("rowR").
 innerHTML=z;
 Zadanie 3.1
-*/
+
 var komp=Math.ceil(Math.random() * 10);
 const ja=prompt("Podaj liczbę:");
 var f=ja-komp;
@@ -59,9 +59,7 @@ if(komp==ja){
     document.getElementById("ans2R").
     innerHTML="Nie trafiłaś :< Pomyliłas się o:"+Math.abs(f);
 }
-/*
-Zadanie 4
-*/
+
 const l1=parseFloat(prompt("Podaj liczbę 1:"));
 
 const l2=parseFloat(prompt("Podaj liczbę 2:"));
@@ -75,24 +73,21 @@ console.log("Liczba 1 jest najweksza "+l1)
 }else{
     console.log("Liczba 3 jest najweksza "+l3)
 }
-/*
-Zadanie 5
 */
 var k1=prompt("Podaj 1 liczbę:");
 var k2=prompt("Podaj 2 liczbę:");
 
-while(k1!=k2){
-    if(k1>k2){
-        k1-=k2
-    }else if(k1<k2){
-        k2-=k1}
-    else{c
-        onsole.log("NWD jest:"+k1)
+function nwd(x, y) {
+    if (y === 0) {
+      return x;
+    } else {
+      return nwd(y, x % y);
     }
 }
-console.log(k1)
+
+console.log("NWD podanych liczb jest:" + nwd(k1, k2));
 document.getElementById("nwdR").
-innerHTML="NWD jest:"+k1;
+innerHTML="NWD jest:"+nwd(k1, k2);
 /*
 Zadanie 6
 */
@@ -116,30 +111,26 @@ console.log(Student3)
 /*
 Zadanie 7
 */
-var StudentA={}
-var StudentB={}
-var StudentC={}
-var nameA=prompt("Wpisz imię dla studenta A:");
-StudentA.imię=nameA;
-var surnameA=prompt("Wpisz nazwisko dla studenta A:");
-StudentA.nazwisko=surnameA;
-var ageA=prompt("Wpisz wiek dla studenta A:");
-StudentA.wiek=ageA;
+function createStudent() {
+    const name = document.getElementById("name").value;
+    const age = document.getElementById("age").value;
+    const major = document.getElementById("lastName").value;
 
-var nameB=prompt("Wpisz imię dla studenta B:");
-StudentB.imię=nameB;
-var surnameB=prompt("Wpisz nazwisko dla studenta B:");
-StudentB.nazwisko=surnameB;
-var ageB=prompt("Wpisz wiek dla studenta B:");
-StudentB.wiek=ageB;
+const student = {
+    name: name,
+    age: age,
+    major: major
+};
 
-var nameC=prompt("Wpisz imię dla studenta C:");
-StudentC.imię=nameC;
-var surnameC=prompt("Wpisz nazwisko dla studenta C:");
-StudentC.nazwisko=surnameC;
-var ageC=prompt("Wpisz wiek dla studenta C:");
-StudentC.wiek=ageC;
-
-console.log(StudentA)
-console.log(StudentB)
-console.log(StudentC)
+    document.getElementById("studentName").innerHTML = "Imię: " + student.name;
+    document.getElementById("studentAge").innerHTML = "Wiek: " + student.age;
+    document.getElementById("studentLastName").innerHTML = "Nazwisko: " + student.major;
+}
+function showTime(){
+    return (new Date()).toLocaleTimeString();
+};
+document.getElementById('czas').innerHTML = showTime();
+setInterval(function() {
+    document.getElementById('czas').innerHTML = showTime();
+}, 1000);
+innerHTML=showTime;
