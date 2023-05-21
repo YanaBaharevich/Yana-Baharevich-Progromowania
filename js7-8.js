@@ -176,4 +176,34 @@ function passwordValidation(field) {
     }
 }
 
+// Zadanie 4
+function validAge() {
+    const today = new Date();
+    const date = new Date(birthDateField.value);
+
+    var age = today.getFullYear() - date.getFullYear();
+    var m = today.getMonth() - date.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < date.getDate())) {
+        age--;
+    }
+
+    const errorField = document.querySelector('[name="birthDate"] + span.error');
+
+    errorField.innerHTML = age < 18 ? 'Musisz być pełnoletni' : '';
+
+    return age < 18;
+}
+// Zadanie 5
+function validConfirmPassword() {
+    const errorField = document.querySelector(`[name='confirm-password'] + span.error`);
+    if (confirmPasswordField.value !== passwordField.value) {
+        errorField.innerHTML = 'Hasła nie są takie same';
+        return true;
+    }
+    else {
+        errorField.innerHTML = '';
+        return false;
+    }
+}
+
 
