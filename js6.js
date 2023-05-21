@@ -14,8 +14,8 @@ class prostokat{
     zmiananazwy(nowa){
         this.nazwa=nowa;
     }
-    porownaj(inny){if (this.oblicz2()!=inny.oblicz2()){
-        if(this.oblicz2()>inny.oblicz2()){
+    porownaj(inny){if (this.pole()!=inny.pole()){
+        if(this.pole()>inny.pole()){
             return this}
             else{
                 return inny
@@ -28,9 +28,9 @@ class prostokat{
 const pr1=new prostokat(4,10,"numer 1");
 const pr2=new prostokat(5,5,"numer 2");
 const pr3=new prostokat(5,5,"numer 3");
-console.log(pr1.oblicz(),pr1.oblicz2());
-console.log(pr2.oblicz(),pr2.oblicz2());
-console.log(pr3.oblicz(),pr3.oblicz2());
+console.log(pr1.obwod(),pr1.pole());
+console.log(pr2.obwod(),pr2.pole());
+console.log(pr3.obwod(),pr3.pole());
 console.log("Większy prostokąt to "+pr1.porownaj(pr2).nazwa);
 console.log("Większy prostokąt to "+pr2.porownaj(pr3).nazwa);
 
@@ -41,6 +41,7 @@ class trojkat{
         this.wysokosc=wysokosc;
         this.dlugosc=dlugosc;
         this.nazwa=nazwa;
+        this.podstawa=podstawa;
     }
     obwod(){
         return this.podstawa+2*this.dlugosc;
@@ -63,9 +64,9 @@ class trojkat{
 }
 
 
-const tro1=new Trapez(4,10,"numer 1");
-const tro2=new Trapez(5,5,"numer 2");
-const tro3=new Trapez(5,5,"numer 3");
+const tro1=new trojkat(4,10,"numer 1");
+const tro2=new trojkat(5,5,"numer 2");
+const tro3=new trojkat(5,5,"numer 3");
 
 //Zadanie 3
 class Trapez{
@@ -97,9 +98,61 @@ function zad4(f1,f2){
                 }
         }else{
             return 0}}}
-poromniaj(pr1,tr2);
-poromniaj(tr3,tro2);
+zad4(pr1,tr2);
+zad4(tr3,tro3);
 
 //Zadanie 6
 
+//lab 6+
+//Zadanie 1
 
+const tablica=[1,2,3,4,4,5,6,7,8,9,10]
+var suma=0;
+const parzyste=[]
+var średnia=0;
+var najw=0;
+tablica.forEach(function(element){
+suma+=element;
+});
+console.log(suma);
+
+tablica.forEach(function(element){
+    if (element%2===0){
+    parzyste.push(element)
+    }
+    });
+console.log(parzyste);
+
+const przetworzonaTablica = tablica.map(element => element * 3); 
+console.log(przetworzonaTablica); 
+tablica.push(68369)
+
+tablica.forEach(function(element,index){
+    if (element===68369){
+    console.log(index)
+    }
+    });
+tablica.forEach(function(element){
+    średnia+=element
+    });
+średnia/2
+console.log(średnia);
+
+function max(tablica) {
+    let max = tablica[0];
+    tablica.forEach(function(e) {
+      if (e > max) max = e;
+    });
+    return max;
+  }
+console.log(max(tablica))
+
+function ilosc(tablica,liczba){
+    let il=0;
+    tablica.forEach(function(element){
+        if  (element==liczba) il+=1
+    });
+    return il;
+}
+
+console.log(ilosc(tablica,4));
