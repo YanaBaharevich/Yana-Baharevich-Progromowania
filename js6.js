@@ -11,6 +11,9 @@ class prostokat{
     pole(){
         return this.wysokosc*this.szerokosc;
     }
+    zmiananazwy(nowa){
+        this.nazwa=nowa;
+    }
     porownaj(inny){if (this.oblicz2()!=inny.oblicz2()){
         if(this.oblicz2()>inny.oblicz2()){
             return this}
@@ -54,6 +57,9 @@ class trojkat{
     }else{
         return 0}
 }
+    zmiananazwy(nowa){
+    this.nazwa=nowa;
+    }
 }
 
 
@@ -71,6 +77,9 @@ class Trapez{
     }
     pole(){
     return 1/2*(this.podstawa1+this.podstawa2)*this.wysokość;
+    }
+    zmiananazwy(nowa){
+        this.nazwa=nowa;
     }
 }
 
@@ -91,5 +100,6 @@ function zad4(f1,f2){
 poromniaj(pr1,tr2);
 poromniaj(tr3,tro2);
 
+//Zadanie 6
 
 
