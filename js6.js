@@ -31,6 +31,31 @@ console.log(pr3.oblicz(),pr3.oblicz2());
 console.log("Większy prostokąt to "+pr1.porownaj(pr2).nazwa);
 console.log("Większy prostokąt to "+pr2.porownaj(pr3).nazwa);
 
+//Zadanie 2
+
+class trojkat{
+    constructor(wysokosc,dlugosc,podstawa,nazwa){
+        this.wysokosc=wysokosc;
+        this.dlugosc=dlugosc;
+        this.nazwa=nazwa;
+    }
+    obwod(){
+        return this.podstawa+2*this.dlugosc;
+    }
+    pole(){
+        return 1/2*this.podstawa*this.wysokosc;
+    }
+    porownaj(inny){if (this.pole()!=inny.pole()){
+        if(this.pole()>inny.pole()){
+            return this}
+            else{
+                return inny
+            }
+    }else{
+        return 0}
+    }
+
+
 //Zadanie 3
 class Trapez{
     constructor(nazwa,wysokość,podstawa1,podstawa2){
