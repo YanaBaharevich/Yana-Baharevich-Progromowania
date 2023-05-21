@@ -5,10 +5,10 @@ class prostokat{
         this.szerokosc=szerokosc;
         this.nazwa=nazwa;
     }
-    oblicz(){
+    obwod(){
         return 2*this.wysokosc+2*this.szerokosc;
     }
-    oblicz2(){
+    pole(){
         return this.wysokosc*this.szerokosc;
     }
     porownaj(inny){if (this.oblicz2()!=inny.oblicz2()){
@@ -53,8 +53,13 @@ class trojkat{
             }
     }else{
         return 0}
-    }
+}
+}
 
+
+const tro1=new Trapez(4,10,"numer 1");
+const tro2=new Trapez(5,5,"numer 2");
+const tro3=new Trapez(5,5,"numer 3");
 
 //Zadanie 3
 class Trapez{
@@ -71,4 +76,20 @@ class Trapez{
 
 const tr1=new Trapez(4,10,"numer 1");
 const tr2=new Trapez(5,5,"numer 2");
-const rt3=new Trapez(5,5,"numer 3");
+const tr3=new Trapez(5,5,"numer 3");
+
+//Zadanie 4
+function zad4(f1,f2){
+    {if (f1.pole()!=f2.pole()){
+        if(f1.pole()>f2.pole()){
+         return console.log(f1.nazwa)}
+         else{
+         console.log(f2.nazwa)
+                }
+        }else{
+            return 0}}}
+poromniaj(pr1,tr2);
+poromniaj(tr3,tro2);
+
+
+
