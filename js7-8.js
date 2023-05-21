@@ -1,5 +1,6 @@
-//Zadanie 1
-
+///
+/// Baza
+///
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (event) => {
@@ -8,6 +9,10 @@ form.addEventListener('submit', (event) => {
         alert('Sukces');
     }
 });
+
+///
+/// Pola
+///
 
 const nameField = document.querySelector("[name='name']");
 nameField.addEventListener('input', () => {
@@ -44,6 +49,7 @@ sexFields.forEach(field => {
     });
 });
 
+
 const phoneField = document.querySelector("[name='phone']");
 phoneField.addEventListener('input', () => {
     requiredValidation(phoneField);
@@ -69,3 +75,105 @@ const confirmPasswordField = document.querySelector("[name='confirm-password']")
 confirmPasswordField.addEventListener('input', () => {
     validConfirmPassword();
 });
+
+
+
+//Zadanie 2 -3
+
+function requiredValidation(field) {
+    
+    const errorField = document.querySelector(`[name='${field.name}'] + span.error`);
+    //
+    if (!field.value || field.value === '') {
+        
+        field.setCustomValidity('To pole jest wymagane');
+        return true;
+    }
+    else {
+        
+        field.setCustomValidity('');
+        errorField.innerHTML = '';
+        return false;
+    }
+}
+
+function minLengthValidation(field, minLength = 0) {
+    const errorField = document.querySelector(`[name='${field.name}'] + span.error`);
+    if (field.value.length < minLength) {
+        
+        field.setCustomValidity(`To pole musi mieć conajmniej ${minLength} znaków`);
+        errorField.innerHTML = `To pole musi mieć conajmniej ${minLength} znaków`;
+        return true;
+    }
+    else {
+        
+        field.setCustomValidity('');
+        errorField.innerHTML = '';
+        return false;
+    }
+}
+
+function maxLengthValidation(field, maxLength = 0) {
+    const errorField = document.querySelector(`[name='${field.name}'] + span.error`);
+    if (field.value.length > maxLength) {
+        
+        field.setCustomValidity(`To pole musi mieć najwyżej ${maxLength} znaków`);
+        errorField.innerHTML = `To pole może mieć najwyżej ${maxLength} znaków`;
+        return true;
+    }
+    else {
+        
+        field.setCustomValidity('');
+        errorField.innerHTML = '';
+        return false;
+    }
+}
+
+function validSexFileds() {
+    let result = false;
+
+    const errorField = document.querySelector('span.sex.error');
+
+    sexFields.forEach(field => {
+        result = field.checked || result;
+    });
+
+    errorField.innerHTML = result ? '' : 'Prosze wybrać płeć';
+
+    return !result;
+}
+
+function emailValidation(field) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const errorField = document.querySelector(`[name='${field.name}'] + span.error`);
+    if (!emailRegex.test(field.value)) {
+        
+         field.setCustomValidity("Proszę podać poprawny adres e-mail.");
+        errorField.innerHTML = 'Proszę podać poprawny adres e-mail.';
+        return true;
+    }
+    else {
+        
+        field.setCustomValidity('');
+        errorField.innerHTML = '';
+        return false;
+    }
+}
+
+function passwordValidation(field) {
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{}|;':",./<>?])[0-9a-zA-Z!@#$%^&*()_+\-=[\]{}|;':",./<>?]{8,}$/;
+    const errorField = document.querySelector(`[name='${field.name}'] + span.error`);
+    if (!passwordRegex.test(field.value)) {
+        
+        field.setCustomValidity("Hasło mieć co najmniej 8 znaków i zawierać przynajmniej jedną cyfrę, jedną małą literę i jedną dużą literę.");
+        errorField.innerHTML = 'Hasło mieć co najmniej 8 znaków i zawierać przynajmniej jedną cyfrę, jedną małą literę i jedną dużą literę.';
+        return true;
+    }
+    else {
+        field.setCustomValidity('');
+        errorField.innerHTML = '';
+        return false;
+    }
+}
+
+
