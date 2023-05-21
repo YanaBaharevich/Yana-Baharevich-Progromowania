@@ -52,6 +52,7 @@
             <input type="text" name="email">
             <span class="error"></span>
         </div>
+        
         <div class="control">
             <label>Hasło: </label>
             <input type="password" name="password">
@@ -84,7 +85,7 @@
         </div>
         <div class="control">
             <label>Kraj: </label>
-            <select name="country">
+            <select name="country" id="country">
                 <option></option>
                 <option value="Polska">Polska</option>
                 <option value="Ukraina">Ukraina</option>
@@ -93,8 +94,25 @@
             </select>
             <span class="error"></span>
         </div>
-       
+        <div class="control">
+          <label>Województwo:</label>
+          <input type="text" name="województwo">
+          <span class="error"></span> 
+        </div>
 
+        <div class="control">
+          <input type="checkbox" checked>
+          <label>Adres zameszkania:</label>
+          <input type="text" name="adresz">
+          <span class="error"></span> 
+        </div>
+
+        <div class="control">
+          <input type="checkbox">
+          <label>Adres korespondencyjny:</label>
+          <input type="text" name="adresk">
+          <span class="error"></span> 
+        </div>  
         <div class="control actions">
             <input type="submit" value="Zapisz">
         </div>

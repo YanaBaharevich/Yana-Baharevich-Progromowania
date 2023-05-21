@@ -206,4 +206,12 @@ function validConfirmPassword() {
     }
 }
 
-
+//Zadanie 1 Lab 8
+function HiddenFormWojewodztwo() {
+    
+    if (!document.getElementById("country").checked) {
+    document.getElementById("wojewodztwo").disabled = false;
+    }else {document.getElementById("wojewodztwo").disabled = true;
+    }
+    }
+    
