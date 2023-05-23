@@ -246,7 +246,7 @@ else{
 } 
 }
 
-function megazordTransformation()
+function Transformation()
 {
 const country = document.querySelector("[name='country']").value;
 if (country === "Polska") {
@@ -277,6 +277,14 @@ document.querySelector("#voivodeship-container").innerHTML = `
     `;
 }
 }
-megazordTransformation();
+Transformation();
 
 
+var phoneInput = document.getElementById('phone-input');
+    phoneInput.addEventListener('input', function () {
+        var sanitizedValue = phoneInput.value.replace(/\D/g, '');
+
+        sanitizedValue = sanitizedValue.slice(0, 9);
+
+        phoneInput.value = sanitizedValue;
+    }); 
