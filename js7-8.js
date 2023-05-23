@@ -258,17 +258,18 @@ document.querySelector("#voivodeship-container").innerHTML = `
             <option value="Lubelskie">Lubelskie</option>
             <option value="Lubuskie">Lubuskie</option>
             <option value="Łódzkie">Łódzkie</option>
+            <option value="Śląskie">Śląskie</option>
+            <option value="Świętokrzyskie">Świętokrzyskie</option>
+            <option value="Warmińsko-Mazurskie">Warmińsko-Mazurskie</option>
+            <option value="Wielkopolskie">Wielkopolskie</option>
+            <option value="Zachodniopomorskie">Zachodniopomorskie</option>
             <option value="Małopolskie">Małopolskie</option>
             <option value="Mazowieckie">Mazowieckie</option>
             <option value="Opolskie">Opolskie</option>
             <option value="Podkarpackie">Podkarpackie</option>
             <option value="Podlaskie">Dzicz</option>
             <option value="Pomorskie">Pomorskie</option>
-            <option value="Śląskie">Śląskie</option>
-            <option value="Świętokrzyskie">Świętokrzyskie</option>
-            <option value="Warmińsko-Mazurskie">Warmińsko-Mazurskie</option>
-            <option value="Wielkopolskie">Wielkopolskie</option>
-            <option value="Zachodniopomorskie">Zachodniopomorskie</option>
+            
         </select>
     `;
 } else {
