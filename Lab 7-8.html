@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="utf-8" />
     <style>
@@ -52,7 +53,6 @@
             <input type="text" name="email">
             <span class="error"></span>
         </div>
-        
         <div class="control">
             <label>Hasło: </label>
             <input type="password" name="password">
@@ -75,7 +75,7 @@
         </div>
         <div class="control">
             <label>Telefon: </label>
-            <input type="text" name="phone">
+            <input type="text" name="phone" id="phone-input">
             <span class="error"></span>
         </div>
         <div class="control">
@@ -85,7 +85,7 @@
         </div>
         <div class="control">
             <label>Kraj: </label>
-            <select name="country" id="country">
+            <select name="country" onchange="showYourselfSequel()">
                 <option></option>
                 <option value="Polska">Polska</option>
                 <option value="Ukraina">Ukraina</option>
@@ -94,6 +94,7 @@
             </select>
             <span class="error"></span>
         </div>
+        
         <div class="control">
             <label>Województwo: </label>
             <span id="voivodeship-container">
@@ -115,8 +116,8 @@
             <span class="error"></span>
         </div>
         <div class="control">
-            <label id="k2Address" style="display: none;">Adres korespondencyjny: </label>
-            <input type="input" name="c2Address" disabled hidden>
+            <label id="Labelk2" style="display: none;">Adres korespondencyjny: </label>
+            <input type="input" name="k2Address" disabled hidden>
             <span class="error"></span>
         </div>
        

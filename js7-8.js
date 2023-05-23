@@ -238,15 +238,15 @@ function showYourselfPrequel()
 const voivodeship = document.querySelector("[name='voivodeship']").value;
 if(voivodeship != ""){
     document.querySelector("[name='address']").disabled=false;
-    document.querySelector("[name='c2Address']").disabled=false;
+    document.querySelector("[name='k2Address']").disabled=false;
 }
 else{
     document.querySelector("[name='address']").disabled=true;
-    document.querySelector("[name='c2Address']").disabled=true;
+    document.querySelector("[name='k2Address']").disabled=true;
 } 
 }
 
-function Transformation()
+function megazordTransformation()
 {
 const country = document.querySelector("[name='country']").value;
 if (country === "Polska") {
@@ -258,18 +258,17 @@ document.querySelector("#voivodeship-container").innerHTML = `
             <option value="Lubelskie">Lubelskie</option>
             <option value="Lubuskie">Lubuskie</option>
             <option value="Łódzkie">Łódzkie</option>
-            <option value="Śląskie">Śląskie</option>
-            <option value="Świętokrzyskie">Świętokrzyskie</option>
-            <option value="Warmińsko-Mazurskie">Warmińsko-Mazurskie</option>
-            <option value="Wielkopolskie">Wielkopolskie</option>
-            <option value="Zachodniopomorskie">Zachodniopomorskie</option>
             <option value="Małopolskie">Małopolskie</option>
             <option value="Mazowieckie">Mazowieckie</option>
             <option value="Opolskie">Opolskie</option>
             <option value="Podkarpackie">Podkarpackie</option>
             <option value="Podlaskie">Dzicz</option>
             <option value="Pomorskie">Pomorskie</option>
-            
+            <option value="Śląskie">Śląskie</option>
+            <option value="Świętokrzyskie">Świętokrzyskie</option>
+            <option value="Warmińsko-Mazurskie">Warmińsko-Mazurskie</option>
+            <option value="Wielkopolskie">Wielkopolskie</option>
+            <option value="Zachodniopomorskie">Zachodniopomorskie</option>
         </select>
     `;
 } else {
@@ -278,14 +277,5 @@ document.querySelector("#voivodeship-container").innerHTML = `
     `;
 }
 }
-Transformation();
+megazordTransformation();
 
-
-var phoneInput = document.getElementById('phone-input');
-    phoneInput.addEventListener('input', function () {
-        var sanitizedValue = phoneInput.value.replace(/\D/g, '');
-
-        sanitizedValue = sanitizedValue.slice(0, 9);
-
-        phoneInput.value = sanitizedValue;
-    }); 
