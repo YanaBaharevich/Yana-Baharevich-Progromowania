@@ -207,11 +207,84 @@ function validConfirmPassword() {
 }
 
 //Zadanie 1 Lab 8
-function HiddenFormWojewodztwo() {
+function showYourself() {
+    const cAddress = document.querySelector("[name='cAddress']");
+    const c2AddressLabel = document.getElementById("c2AddressLabel");
+    const c2AddressInput = document.querySelector("[name='c2Address']");
     
-    if (!document.getElementById("country").checked) {
-    document.getElementById("wojewodztwo").disabled = false;
-    }else {document.getElementById("wojewodztwo").disabled = true;
-    }
-    }
+    if (cAddress.checked == false) {
+        c2AddressLabel.style.display = "block";
+        c2AddressInput.hidden = false;
+    } else {
+        c2AddressLabel.style.display = "none";
+        c2AddressInput.hidden = true;
+}
+}
+
+function showYourselfSequel()
+{
+megazordTransformation();
+const country = document.querySelector("[name='country']").value;
+if(country != ""){
+    document.querySelector("[name='voivodeship']").disabled=false;
+}
+else{
+    document.querySelector("[name='voivodeship']").disabled=true;
+}  
+}
+
+function showYourselfPrequel()
+{
+const voivodeship = document.querySelector("[name='voivodeship']").value;
+if(voivodeship != ""){
+    document.querySelector("[name='address']").disabled=false;
+    document.querySelector("[name='c2Address']").disabled=false;
+}
+else{
+    document.querySelector("[name='address']").disabled=true;
+    document.querySelector("[name='c2Address']").disabled=true;
+} 
+}
+
+function megazordTransformation()
+{
+const country = document.querySelector("[name='country']").value;
+if (country === "Polska") {
+document.querySelector("#voivodeship-container").innerHTML = `
+        <select onChange="showYourselfPrequel()" name="voivodeship">
+            <option></option>
+            <option value="Dolnośląskie">Dolnośląskie</option>
+            <option value="Kujawsko-Pomorskie">Kujawsko-Pomorskie</option>
+            <option value="Lubelskie">Lubelskie</option>
+            <option value="Lubuskie">Lubuskie</option>
+            <option value="Łódzkie">Łódzkie</option>
+            <option value="Małopolskie">Małopolskie</option>
+            <option value="Mazowieckie">Mazowieckie</option>
+            <option value="Opolskie">Opolskie</option>
+            <option value="Podkarpackie">Podkarpackie</option>
+            <option value="Podlaskie">Dzicz</option>
+            <option value="Pomorskie">Pomorskie</option>
+            <option value="Śląskie">Śląskie</option>
+            <option value="Świętokrzyskie">Świętokrzyskie</option>
+            <option value="Warmińsko-Mazurskie">Warmińsko-Mazurskie</option>
+            <option value="Wielkopolskie">Wielkopolskie</option>
+            <option value="Zachodniopomorskie">Zachodniopomorskie</option>
+        </select>
+    `;
+} else {
+    document.querySelector("#voivodeship-container").innerHTML = `
+        <input onChange="showYourselfPrequel()" type="text" name="voivodeship" disabled>
+    `;
+}
+}
+megazordTransformation();
+
+var phoneInput = document.getElementById('phone-input');
+phoneInput.addEventListener('input', function () {
+    var sanitizedValue = phoneInput.value.replace(/\D/g, '');
+
+    sanitizedValue = sanitizedValue.slice(0, 9);
+
+    phoneInput.value = sanitizedValue;
+});
     

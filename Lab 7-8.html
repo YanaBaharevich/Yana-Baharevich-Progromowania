@@ -95,24 +95,32 @@
             <span class="error"></span>
         </div>
         <div class="control">
-          <label>Województwo:</label>
-          <input type="text" name="województwo">
-          <span class="error"></span> 
+            <label>Województwo: </label>
+            <span id="voivodeship-container">
+                <input onChange="showYourselfPrequel()" type="text" name="voivodeship" disabled>
+            </span>
+            <span class="error"></span>
         </div>
 
-        <div class="control">
-          <input type="checkbox" checked>
-          <label>Adres zameszkania:</label>
-          <input type="text" name="adresz">
-          <span class="error"></span> 
+            <span class="error"></span>
         </div>
-
         <div class="control">
-          <input type="checkbox">
-          <label>Adres korespondencyjny:</label>
-          <input type="text" name="adresk">
-          <span class="error"></span> 
-        </div>  
+            <label>Adres zamieszkania: </label>
+            <input type="input" name="address" disabled>
+            <span class="error"></span>
+        </div>
+        <div class="control">
+            <label>Adres korespondencyjny jest taki sam jak adres zamieszkania </label>
+            <input onClick="showYourself()" type="checkbox" name="cAddress" checked>
+            <span class="error"></span>
+        </div>
+        <div class="control">
+            <label id="c2AddressLabel" style="display: none;">Adres korespondencyjny: </label>
+            <input type="input" name="c2Address" disabled hidden>
+            <span class="error"></span>
+        </div>
+       
+
         <div class="control actions">
             <input type="submit" value="Zapisz">
         </div>
