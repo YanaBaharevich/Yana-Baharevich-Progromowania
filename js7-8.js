@@ -279,12 +279,4 @@ document.querySelector("#voivodeship-container").innerHTML = `
 }
 megazordTransformation();
 
-var phoneInput = document.getElementById('phone-input');
-phoneInput.addEventListener('input', function () {
-    var sanitizedValue = phoneInput.value.replace(/\D/g, '');
 
-    sanitizedValue = sanitizedValue.slice(0, 9);
-
-    phoneInput.value = sanitizedValue;
-});
-    
